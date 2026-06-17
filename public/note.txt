@@ -1,0 +1,142 @@
+/**
+ * @file: profile.config.ts
+ * @author: Pranav Arun
+ * @summary: Backend Developer & AI Enthusiast building robust
+ *   systems and exploring machine learning / AI capabilities.
+ */
+
+// --------------------------------------------------
+// 1. CORE DEPENDENCIES & SKILLS
+// --------------------------------------------------
+
+const TECH_STACK = {
+  backend: [
+    "Node.js",         // 90%
+    "Python",          // 85%
+    "JavaScript",      // 85%
+    "TypeScript",      // 80%
+  ],
+
+  frontend: [
+    "React.js",        // 75%
+  ],
+
+  databases: [
+    "MongoDB",         // 85%
+    "MySQL",           // 80%
+    "Cassandra DB",    // 70%
+  ],
+
+  tools: [
+    "Docker",
+    "Git",
+    "GitHub"
+  ]
+};
+
+
+// --------------------------------------------------
+// 2. EDUCATION & ACADEMICS
+// --------------------------------------------------
+
+class Education {
+  /** 
+   * UNDERGRADUATE DEGREES
+   * @institution K.S. School of Engineering and Management (KSSEM)
+   * @degree Bachelor of Engineering (B.E.)
+   */
+  public async getAcademics() {
+    return {
+      degree: "B.E. in Computer Science & Engineering",
+      college: "KSSEM",
+      status: "Pursuing"
+    };
+  }
+}
+
+
+// --------------------------------------------------
+// 3. PROJECT ARCHIVE
+// --------------------------------------------------
+
+interface Project {
+  name: string;
+  url: string;
+  stack: string[];
+  description: string;
+  collaborators?: string[];
+}
+
+const projects: Project[] = [
+  {
+    name: "Chain-of-Thought",
+    url: "https://github.com/toxicbishop/Chain-of-Thought",
+    stack: ["AI", "Python", "LLMs"],
+    description: "Research and implementation of Chain-of-Thought reasoning patterns in AI models."
+  },
+  {
+    name: "Crypt-Vault (Group Project)",
+    url: "https://github.com/toxicbishop/Crypt-Vault",
+    stack: ["Cryptography", "Node.js", "Security"],
+    description: "A collaborative secure vault project.",
+    collaborators: ["supr1795", "Mohammed0572", "Rohithgaloth"]
+  },
+  {
+    name: "DSA-with-tsx",
+    url: "https://github.com/toxicbishop/DSA-with-tsx",
+    stack: ["TypeScript", "TSX", "Algorithms"],
+    description: "Data Structures & Algorithms implementations and visualisations using TSX."
+  },
+  {
+    name: "VITAL-Health-App-Flutter",
+    url: "https://github.com/toxicbishop/VITAL-Health-App-Flutter",
+    stack: ["Flutter", "Dart", "Mobile"],
+    description: "A healthcare utility and metric logging application built using Flutter."
+  },
+  {
+    name: "KSSEM-College-ERP-System",
+    url: "https://github.com/toxicbishop/KSSEM-College-ERP-System",
+    stack: ["Java/C#", "Database", "ERP"],
+    description: "An Enterprise Resource Planning system tailored for managing college operations."
+  },
+  {
+    name: "Student-GUI-With-SQL",
+    url: "https://github.com/toxicbishop/Student-GUI-With-SQL",
+    stack: ["Python/Java", "SQL", "GUI"],
+    description: "Desktop database viewer and manager for students."
+  }
+];
+
+
+// --------------------------------------------------
+// 4. CONTACT ENDPOINTS
+// --------------------------------------------------
+
+const contact = {
+  email: "pranavarun19@gmail.com",
+  github: "https://github.com/toxicbishop",
+  linkedin: "https://www.linkedin.com/in/pranav-arun/",
+  twitter: "https://x.com/Pranav63076884",
+  instagram: "https://www.instagram.com/toxicbishop_/"
+};
+
+
+export default new Education();
+
+
+/* -------------------------------------------------
+
+# STATUS AND DIAGNOSTICS
+# ---------------------------------------
+
+$ toxicbishop --status
+
+> Role: Backend Developer & AI Enthusiast
+> Learning: Deepening Agentic AI & Cassandra DB
+> Status: Student & Builder
+
+Loading Repositories... [||||||||||] 100%
+
+Ready to Build 🚀
+
+------------------------------------------------- */

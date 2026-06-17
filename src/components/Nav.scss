@@ -1,0 +1,474 @@
+.nav {
+    width: 100%;
+    background-color: rgba(158, 158, 158, 0.11);
+    padding-inline: 0.75rem;
+    padding-block: 0.22rem;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: -0.1px;
+    box-sizing: border-box;
+    min-height: 32px;
+    position: relative;
+    z-index: 200;
+    gap: 8px;
+}
+
+/* ── LEFT SIDE ─────────────────────────────────────────────── */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    flex-shrink: 1;
+    overflow: visible;
+}
+
+.apple-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+}
+
+.nav-item {
+    white-space: nowrap;
+    cursor: default;
+
+    p {
+        margin: 0;
+    }
+}
+
+.nav-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* hidden on mobile, shown on desktop */
+.nav-desktop-only {
+    display: flex;
+    align-items: center;
+}
+
+/* ── RIGHT SIDE ────────────────────────────────────────────── */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* ── SKY TOGGLE ────────────────────────────────────────────── */
+.sky-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.sky-btn {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.94);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    /* desktop default: pill with label */
+    height: 22px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+
+    &.sky-btn--active {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    &:hover:not(.sky-btn--active) {
+        background: rgba(255, 255, 255, 0.11);
+    }
+}
+
+.sky-icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.sky-btn-label {
+    /* visible on desktop, hidden on mobile via breakpoint */
+    display: inline;
+}
+
+/* ── WIFI ──────────────────────────────────────────────────── */
+.wifi-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    img {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+}
+
+/* ── DATETIME ──────────────────────────────────────────────── */
+.nav-datetime {
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREAKPOINTS
+   ════════════════════════════════════════════════════════════ */
+
+/* Laptop: hide some nav items to prevent overflow */
+@media (max-width: 1100px) {
+    .nav-left {
+        gap: 0.6rem;
+    }
+}
+
+/* Tablet / small laptop: hide desktop-only nav items */
+@media (max-width: 900px) {
+    .nav-desktop-only {
+        display: none;
+    }
+
+    .nav-left {
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav {
+        padding-inline: 0.55rem;
+        padding-block: 0.18rem;
+        min-height: 28px;
+        gap: 6px;
+    }
+
+    .nav-left {
+        gap: 6px;
+    }
+
+    .nav-right {
+        gap: 6px;
+    }
+
+    /* Icon-only buttons: no label, square-ish pill */
+    .sky-toggle {
+        gap: 5px;
+    }
+
+    .sky-btn {
+        height: 22px;
+        width: 28px;
+        padding: 0;
+        gap: 0;
+        font-size: 0;
+        /* hides any stray text */
+    }
+
+    .sky-btn-label {
+        display: none;
+        /* hide the text label */
+    }
+
+    .sky-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .nav-datetime {
+        font-size: 0.72rem;
+    }
+
+    .apple-icon img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .sky-btn {
+        height: 20px;
+        width: 24px;
+    }
+
+    .sky-icon {
+        width: 11px;
+        height: 11px;
+    }
+
+    .nav-datetime {
+        font-size: 0.68rem;
+    }
+}
+
+/* Apple Dropdown & Menu Containers */
+.apple-menu-container,
+.menu-item-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.apple-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 5px;
+    width: 185px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown-item {
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.95);
+    cursor: default;
+    font-size: 13px;
+    transition: background 0.1s, color 0.1s;
+    text-align: left;
+    font-weight: 500;
+    user-select: none;
+
+    &:hover {
+        background: #007aff;
+        color: white;
+    }
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 4px 6px;
+}
+
+/* Active Headings styling */
+.nav-item.nav-desktop-only {
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 4px;
+    transition: background 0.1s;
+    user-select: none;
+
+    &:hover, &.active-menu-label {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+.apple-icon {
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+
+    &:hover, &.active-menu-label {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* Dropdown Extras */
+.dropdown-header {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    text-align: left;
+    user-select: none;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .checkbox-indicator {
+        display: inline-block;
+        width: 14px;
+        font-weight: bold;
+        color: #007aff;
+    }
+
+    .app-name-label {
+        flex-grow: 1;
+    }
+
+    &:hover {
+        .checkbox-indicator {
+            color: white;
+        }
+    }
+}
+
+.color-option-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .color-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Copied Toast Alert */
+.copied-toast {
+    position: fixed;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 10000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    animation: toast-fade-in-out 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toast-fade-in-out {
+    0% { opacity: 0; transform: translate(-50%, -15px); }
+    12% { opacity: 1; transform: translate(-50%, 0); }
+    88% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -15px); }
+}
+
+/* Wi-Fi Dropdown Styles */
+.wifi-toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    
+    .toggle-switch {
+        position: relative;
+        width: 34px;
+        height: 18px;
+        border-radius: 9px;
+        transition: background-color 0.2s;
+        
+        &.on {
+            background-color: #30d158; // iOS / macOS green
+            .toggle-handle {
+                left: 17px;
+            }
+        }
+        
+        &.off {
+            background-color: rgba(255, 255, 255, 0.18);
+            .toggle-handle {
+                left: 2px;
+            }
+        }
+        
+        .toggle-handle {
+            position: absolute;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+            transition: left 0.18s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+    }
+}
+
+.network-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    
+    .network-check {
+        width: 12px;
+        font-weight: bold;
+        color: #007aff;
+    }
+    
+    .network-name {
+        flex-grow: 1;
+        text-align: left;
+    }
+    
+    .network-lock {
+        font-size: 9px;
+        opacity: 0.55;
+    }
+    
+    &.connected {
+        font-weight: 600;
+    }
+}
+
+.speed-test-btn {
+    text-align: center;
+    color: #007aff;
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: center;
+    
+    &:hover {
+        background: #007aff;
+        color: white;
+    }
+}
+
+.offline-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    padding: 8px 12px;
+    text-align: left;
+    user-select: none;
+}
