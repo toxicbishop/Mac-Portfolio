@@ -12,14 +12,18 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.41.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
+    "lucide-react": "^1.20.0",
     "react": "^19.2.4",
     "react-console-emulator": "^5.0.2",
     "react-dom": "^19.2.4",
     "react-markdown": "^10.1.0",
     "react-rnd": "^10.5.3",
     "react-syntax-highlighter": "^16.1.1",
-    "sass": "^1.98.0"
+    "sass": "^1.98.0",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
@@ -33,6 +37,7 @@
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.3",
     "vite": "^8.0.1"
   }
 }
