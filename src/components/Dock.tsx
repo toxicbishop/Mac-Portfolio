@@ -1,13 +1,31 @@
 import React, { useRef } from 'react'
 import './Dock.scss'
 
-const Dock = ({ setWindowsState }) => {
-  const dockRef = useRef(null)
+interface DockItem {
+  key: string
+  className: string
+  src: string
+  onClick?: () => void
+  isLink?: boolean
+  href?: string
+}
 
-  const handleMouseMove = (e) => {
+interface DockProps {
+  setWindowsState: React.Dispatch<React.SetStateAction<{
+    github: boolean
+    note: boolean
+    spotify: boolean
+    cli: boolean
+  }>>
+}
+
+const Dock: React.FC<DockProps> = ({ setWindowsState }) => {
+  const dockRef = useRef<HTMLElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const dock = dockRef.current
     if (!dock) return
-    const icons = dock.querySelectorAll('.dock-icon-wrap')
+    const icons = dock.querySelectorAll<HTMLElement>('.dock-icon-wrap')
     const mouseX = e.clientX
 
     icons.forEach((icon) => {
@@ -29,13 +47,13 @@ const Dock = ({ setWindowsState }) => {
   const handleMouseLeave = () => {
     const dock = dockRef.current
     if (!dock) return
-    const icons = dock.querySelectorAll('.dock-icon-wrap')
+    const icons = dock.querySelectorAll<HTMLElement>('.dock-icon-wrap')
     icons.forEach((icon) => {
       icon.style.transform = 'scale(1) translateY(0px)'
     })
   }
 
-  const items = [
+  const items: DockItem[] = [
     {
       key: 'github',
       className: 'github',
@@ -74,7 +92,6 @@ const Dock = ({ setWindowsState }) => {
       src: '/doc-icons/note.svg',
       onClick: () => setWindowsState(prev => ({ ...prev, note: true })),
     },
-
     {
       key: 'mail',
       className: 'mail',
@@ -98,7 +115,7 @@ const Dock = ({ setWindowsState }) => {
 
   return (
     <footer
-      className='dock'
+      className="dock"
       ref={dockRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

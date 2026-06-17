@@ -1,0 +1,15 @@
+/* ─── Tailwind CSS v4 ───────────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─── Google Fonts ──────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
+@theme {
+  --font-serif: 'Instrument Serif', -apple-system, BlinkMacSystemFont, Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent: #10B981;
+  --radius: 0.625rem;
+}

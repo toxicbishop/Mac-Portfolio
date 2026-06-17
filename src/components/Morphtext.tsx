@@ -2,23 +2,22 @@ import React from 'react'
 import './Morphtext.scss'
 
 const LINE_ONE = [
-  "Hi,", "I'm", "Pranav", "Arun,", "a", "passionate", "backend",
-  "developer", "&", "AI", "enthusiast", "dedicated", "to", "building",
-  "robust", "systems", "and", "solving", "complex", "problems",
-  "with", "modern", "tech."
+  'Hi,', "I'm", 'Pranav', 'Arun,', 'a', 'passionate', 'backend',
+  'developer', '&', 'AI', 'enthusiast', 'dedicated', 'to', 'building',
+  'robust', 'systems', 'and', 'solving', 'complex', 'problems',
+  'with', 'modern', 'tech.',
 ]
 
-const LINE_TWO_NORMAL = ["Explore", "my", "work", "through", "the"]
-const LINE_TWO_HIGHLIGHT = ["Dock", "below", "and", "get", "in", "touch."]
+const LINE_TWO_NORMAL = ['Explore', 'my', 'work', 'through', 'the']
+const LINE_TWO_HIGHLIGHT = ['Dock', 'below', 'and', 'get', 'in', 'touch.']
 
-const Morphtext = () => {
+const Morphtext: React.FC = () => {
   let index = 0
 
-  const renderWords = (words, extraClass = '') =>
+  const renderWords = (words: string[], extraClass = '') =>
     words.map((word) => {
       const delay = `${index * 0.08}s`
       index++
-
       return (
         <span
           key={`${word}-${index}`}
@@ -35,7 +34,6 @@ const Morphtext = () => {
       <div className="morph-line">
         {renderWords(LINE_ONE)}
       </div>
-
       <div className="morph-line">
         {renderWords(LINE_TWO_NORMAL)}
         {renderWords(LINE_TWO_HIGHLIGHT, 'hero-highlight')}
