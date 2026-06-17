@@ -9,6 +9,11 @@ An interactive, macOS-inspired developer portfolio web application built with Re
 [![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+---
+
+![Mac Portfolio Desktop](./public/assets/mac-desktop.png)
 
 ---
 
@@ -41,9 +46,10 @@ This project is a premium macOS-themed developer portfolio designed to showcase 
 
 ## Technologies Used
 
-- **Frontend**: React 19, JavaScript
-- **Styling**: Sass, Tailwind CSS v4, Autoprefixer, PostCSS
-- **Animations**: Framer Motion
+- **Frontend**: React 19, **TypeScript**
+- **Styling**: Sass, **Tailwind CSS v4**, Autoprefixer, PostCSS
+- **Component Library**: **shadcn/ui** (`src/components/ui/`)
+- **Animations**: Framer Motion, **InkReveal** canvas effect
 - **Window Management**: React Rnd (Draggable and Resizable React Component)
 - **Terminal Emulator**: React Console Emulator
 - **Markdown & Syntax Highlighting**: React Markdown, React Syntax Highlighter
@@ -96,15 +102,17 @@ pnpm preview
 
 - **src/assets/**: Source icons and styling assets.
 - **src/components/**: Core desktop and utility elements (Dock, Nav, DateTime, ParticleBg, Morphtext).
+- **src/components/ui/**: shadcn/ui components including `ink-reveal.tsx` (InkReveal canvas effect).
 - **src/components/windows/**: Application-specific window content implementations:
-  - `Cli.jsx`: Shell terminal console simulation.
-  - `Github.jsx`: Dynamic repository feed feed fetcher.
-  - `Note.jsx`: Syntax-highlighted text reader.
-  - `Resume.jsx`: PDF viewer embed.
-  - `Spotify.jsx`: Iframe audio player.
-  - `MacWindow.jsx`: Wrapper handling title bars, min/max/close controls, and window states.
+  - `Cli.tsx`: Shell terminal console simulation.
+  - `Github.tsx`: Dynamic repository feed fetcher.
+  - `Note.tsx`: Syntax-highlighted text reader.
+  - `Resume.tsx`: PDF viewer embed.
+  - `Spotify.tsx`: Iframe audio player.
+  - `MacWindow.tsx`: Wrapper handling title bars, min/max/close controls, and window states.
+- **src/lib/utils.ts**: shadcn `cn()` Tailwind merge utility.
 - **public/**: Static assets including document icons, raw text files, and the PDF resume.
-- **src/App.jsx**: Main application state controller handling open/close desktop window states.
+- **src/App.tsx**: Main application state controller handling open/close desktop window states.
 
 ---
 
@@ -113,13 +121,13 @@ pnpm preview
 To adapt this portfolio for your own details:
 
 1. **Update GitHub Username**:
-   Change `GITHUB_USERNAME` in `src/components/windows/Github.jsx`.
+   Change `GITHUB_USERNAME` in `src/components/windows/Github.tsx`.
 
 2. **Select Featured Repositories**:
-   Edit the `FEATURED_REPOS` array in `src/components/windows/Github.jsx` to list the repositories you want pinned first.
+   Edit the `FEATURED_REPOS` array in `src/components/windows/Github.tsx` to list the repositories you want pinned first.
 
 3. **Update CLI Terminal Content**:
-   Customize commands (like `about`, `skills`, `projects`, `experience`, `education`, `contact`) in `src/components/windows/Cli.jsx`.
+   Customize commands (like `about`, `skills`, `projects`, `experience`, `education`, `contact`) in `src/components/windows/Cli.tsx`.
 
 4. **Replace Resume & Notes**:
    Overwrite the static files in the `public/` directory:
