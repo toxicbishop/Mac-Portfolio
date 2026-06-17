@@ -61,15 +61,10 @@ Make sure you have Node.js (version 18 or higher) and pnpm installed.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/DevashishSharma-codes/Mac-Portfolio.git
+   git clone https://github.com/toxicbishop/Mac-Portfolio
    ```
 
-2. Navigate to the project root directory:
-   ```bash
-   cd Mac-Portfolio
-   ```
-
-3. Install the dependencies:
+2. Install the dependencies:
    ```bash
    pnpm install
    ```
