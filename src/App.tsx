@@ -4,6 +4,7 @@ import Dock from './components/Dock'
 import Nav from './components/Nav'
 import Morphtext from './components/Morphtext'
 import Github from './components/windows/Github'
+import Gitlab from './components/windows/Gitlab'
 import Note from './components/windows/Note'
 import Resume from './components/windows/Resume'
 import Spotify from './components/windows/Spotify'
@@ -12,6 +13,7 @@ import InkReveal from './components/ui/ink-reveal'
 
 interface WindowsState {
   github: boolean
+  gitlab: boolean
   note: boolean
   spotify: boolean
   cli: boolean
@@ -20,6 +22,7 @@ interface WindowsState {
 const App: React.FC = () => {
   const [WindowsState, setWindowsState] = useState<WindowsState>({
     github: false,
+    gitlab: false,
     note: false,
     spotify: false,
     cli: false,
@@ -135,6 +138,9 @@ const App: React.FC = () => {
 
           {WindowsState.github && (
             <Github windowName="GitHub" setWindowsState={setWindowsState} isWifiConnected={isWifiConnected} />
+          )}
+          {WindowsState.gitlab && (
+            <Gitlab windowName="GitLab" setWindowsState={setWindowsState} isWifiConnected={isWifiConnected} />
           )}
           {WindowsState.note && (
             <Note windowName="Note" setWindowsState={setWindowsState} />

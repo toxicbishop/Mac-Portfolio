@@ -4,6 +4,7 @@ import { Rnd } from 'react-rnd'
 
 interface WindowsState {
   github: boolean
+  gitlab: boolean
   note: boolean
   spotify: boolean
   cli: boolean

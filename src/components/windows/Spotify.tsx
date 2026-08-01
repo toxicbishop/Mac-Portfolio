@@ -5,6 +5,7 @@ import './spotify.scss'
 interface SpotifyProps {
   setWindowsState: React.Dispatch<React.SetStateAction<{
     github: boolean
+    gitlab: boolean
     note: boolean
     spotify: boolean
     cli: boolean

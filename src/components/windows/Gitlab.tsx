@@ -2,46 +2,42 @@ import React, { useState, useEffect } from 'react'
 import MacWindow from './MacWindow'
 import './Github.scss'
 
-// ✏️ Put your repo names here in the order you want them to appear
-const FEATURED_REPOS = [
-  'Chain-of-Thought',
-  'DSA-with-tsx',
-  'Crypt-Vault',
-  'Student-GUI-With-SQL',
-  'VITAL-Health-App-Flutter',
-  'KSSEM-College-ERP-System',
-]
+// ✏️ Put your GitLab project names here in the order you want them to appear
+const FEATURED_PROJECTS: string[] = []
 
-const GITHUB_USERNAME = 'toxicbishop'
+const GITLAB_USERNAME = 'toxicbishop'
 
-interface RepoData {
+interface GitLabProject {
   id: number
   name: string
-  full_name: string
+  path_with_namespace: string
   description: string | null
-  html_url: string
-  homepage: string | null
-  language: string | null
+  web_url: string
   topics: string[]
-  owner: {
-    avatar_url: string
+  language: string | null
+  readme_url: string | null
+  avatar_url: string | null
+  namespace: {
+    avatar_url: string | null
   }
 }
 
-interface GitCardProps {
-  data: RepoData
+interface GitLabCardProps {
+  data: GitLabProject
 }
 
-const GitCard: React.FC<GitCardProps> = ({ data }) => {
-  const [imgSrc, setImgSrc] = useState(
-    `https://opengraph.githubassets.com/1/${data.full_name}`
-  )
+const GitLabCard: React.FC<GitLabCardProps> = ({ data }) => {
+  const coverUrl = `https://gitlab.com/${data.path_with_namespace}/raw/HEAD/cover.png`
+  const fallbackUrl =
+    data.avatar_url ||
+    data.namespace?.avatar_url ||
+    `https://gitlab.com/uploads/-/system/user/avatar/default.png`
+
+  const [imgSrc, setImgSrc] = useState(coverUrl)
 
   const tags: string[] = []
   if (data.language) tags.push(data.language)
-  if (data.topics && Array.isArray(data.topics)) {
-    tags.push(...data.topics)
-  }
+  if (data.topics && Array.isArray(data.topics)) tags.push(...data.topics)
 
   return (
     <div className="card">
@@ -49,7 +45,7 @@ const GitCard: React.FC<GitCardProps> = ({ data }) => {
         src={imgSrc}
         alt={`${data.name} cover`}
         style={{ width: '100%', borderRadius: '1rem', aspectRatio: '1200/630', objectFit: 'cover' }}
-        onError={() => setImgSrc(data.owner?.avatar_url)}
+        onError={() => setImgSrc(fallbackUrl)}
       />
       <h1>{data.name}</h1>
       <p className="description">{data.description || 'No description provided.'}</p>
@@ -59,16 +55,13 @@ const GitCard: React.FC<GitCardProps> = ({ data }) => {
         ))}
       </div>
       <div className="urls">
-        <a href={data.html_url} target="_blank" rel="noopener noreferrer">Repository</a>
-        {data.homepage && data.homepage !== '' && (
-          <a href={data.homepage} target="_blank" rel="noopener noreferrer">Demo link</a>
-        )}
+        <a href={data.web_url} target="_blank" rel="noopener noreferrer">Repository</a>
       </div>
     </div>
   )
 }
 
-interface GithubProps {
+interface GitlabProps {
   windowName: string
   setWindowsState: React.Dispatch<React.SetStateAction<{
     github: boolean
@@ -80,23 +73,27 @@ interface GithubProps {
   isWifiConnected: boolean
 }
 
-const Github: React.FC<GithubProps> = ({ windowName, setWindowsState, isWifiConnected }) => {
-  const [repos, setRepos] = useState<RepoData[]>([])
+const Gitlab: React.FC<GitlabProps> = ({ windowName, setWindowsState, isWifiConnected }) => {
+  const [projects, setProjects] = useState<GitLabProject[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!isWifiConnected) return
-    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=30`)
+    fetch(
+      `https://gitlab.com/api/v4/users/${GITLAB_USERNAME}/projects?order_by=updated_at&sort=desc&per_page=30&visibility=public`
+    )
       .then(res => res.json())
-      .then((data: RepoData[]) => {
-        if (!Array.isArray(data)) { setRepos([]); setLoading(false); return }
+      .then((data: GitLabProject[]) => {
+        if (!Array.isArray(data)) { setProjects([]); setLoading(false); return }
 
-        const featured = FEATURED_REPOS
-          .map(name => data.find(r => r.name === name))
-          .filter((r): r is RepoData => Boolean(r))
+        const featured = FEATURED_PROJECTS.length > 0
+          ? FEATURED_PROJECTS
+              .map(name => data.find(r => r.name === name))
+              .filter((r): r is GitLabProject => Boolean(r))
+          : []
 
-        const others = data.filter(r => !FEATURED_REPOS.includes(r.name))
-        setRepos([...featured, ...others])
+        const others = data.filter(r => !FEATURED_PROJECTS.includes(r.name))
+        setProjects([...featured, ...others])
         setLoading(false)
       })
       .catch(() => setLoading(false))
@@ -138,23 +135,23 @@ const Github: React.FC<GithubProps> = ({ windowName, setWindowsState, isWifiConn
               Connection Lost
             </h3>
             <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.4)', maxWidth: '280px', margin: '0 auto', lineHeight: '1.4' }}>
-              GitHub API requires an active network connection. Reconnect to Wi-Fi to load repositories.
+              GitLab API requires an active network connection. Reconnect to Wi-Fi to load projects.
             </p>
           </div>
         ) : (
           <>
             {loading && (
               <div style={{ color: 'white', padding: '2rem', textAlign: 'center', width: '100%' }}>
-                Fetching repositories from GitHub...
+                Fetching projects from GitLab...
               </div>
             )}
-            {!loading && repos.length === 0 && (
+            {!loading && projects.length === 0 && (
               <div style={{ color: 'white', padding: '2rem', textAlign: 'center', width: '100%' }}>
-                No repositories found or API rate limit exceeded.
+                No public projects found or API rate limit exceeded.
               </div>
             )}
-            {!loading && repos.map(project => (
-              <GitCard key={project.id} data={project} />
+            {!loading && projects.map(project => (
+              <GitLabCard key={project.id} data={project} />
             ))}
           </>
         )}
@@ -163,4 +160,4 @@ const Github: React.FC<GithubProps> = ({ windowName, setWindowsState, isWifiConn
   )
 }
 
-export default Github
+export default Gitlab

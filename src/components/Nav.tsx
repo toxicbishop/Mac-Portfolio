@@ -10,6 +10,7 @@ type SpeedTestState = 'idle' | 'running' | 'done'
 
 interface WindowsState {
   github: boolean
+  gitlab: boolean
   note: boolean
   spotify: boolean
   cli: boolean
