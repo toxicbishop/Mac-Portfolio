@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": ">=22.13.0",
+    "pnpm": ">=11"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -36,9 +40,17 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.18",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.3",
-    "vite": "^8.0.1"
+    "vite": "^8.0.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "brace-expansion": ">=2.0.2",
+      "js-yaml": ">=4.1.0",
+      "immutable": ">=4.3.8",
+      "@babel/core": ">=7.26.10"
+    }
   }
 }
