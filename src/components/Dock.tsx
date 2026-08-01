@@ -13,6 +13,7 @@ interface DockItem {
 interface DockProps {
   setWindowsState: React.Dispatch<React.SetStateAction<{
     github: boolean
+    gitlab: boolean
     note: boolean
     spotify: boolean
     cli: boolean
@@ -59,6 +60,19 @@ const Dock: React.FC<DockProps> = ({ setWindowsState }) => {
       className: 'github',
       src: '/doc-icons/github.svg',
       onClick: () => setWindowsState(prev => ({ ...prev, github: true })),
+    },
+    {
+      key: 'gitlab',
+      className: 'gitlab',
+      src: '/doc-icons/gitlab.svg',
+      onClick: () => setWindowsState(prev => ({ ...prev, gitlab: true })),
+    },
+    {
+      key: 'discord',
+      className: 'discord',
+      src: '/doc-icons/discord-icon.svg',
+      isLink: true,
+      href: 'https://discord.com/users/701732138269016064',
     },
     {
       key: 'calender',
