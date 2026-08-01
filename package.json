@@ -22,7 +22,7 @@
     "react-markdown": "^10.1.0",
     "react-rnd": "^10.5.3",
     "react-syntax-highlighter": "^16.1.1",
-    "sass": "^1.98.0",
+    "sass": "^1.102.0",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
@@ -31,14 +31,14 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "autoprefixer": "^10.4.27",
-    "eslint": "^9.39.4",
+    "autoprefixer": "^10.5.4",
+    "eslint": "^10.8.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.1"
+    "postcss": "^8.5.24",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5"
   }
 }
