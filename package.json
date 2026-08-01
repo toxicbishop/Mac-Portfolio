@@ -19,6 +19,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
+    "immutable": "5.1.8",
     "lucide-react": "^1.20.0",
     "react": "^19.2.4",
     "react-console-emulator": "^5.0.2",
@@ -44,13 +45,5 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.3",
     "vite": "^8.0.7"
-  },
-  "pnpm": {
-    "overrides": {
-      "brace-expansion": ">=2.0.2",
-      "js-yaml": ">=4.1.0",
-      "immutable": ">=4.3.8",
-      "@babel/core": ">=7.26.10"
-    }
   }
 }
