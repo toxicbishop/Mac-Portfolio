@@ -61,8 +61,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4
       '@types/node':
-        specifier: ^25.9.3
-        version: 25.9.3
+        specifier: ^26.2.0
+        version: 26.2.0
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -71,7 +71,7 @@ importers:
         version: 19.2.4(@types/react@19.2.18)
       '@vitejs/plugin-react':
         specifier: ^6.0.1
-        version: 6.0.1(vite@8.2.0(@types/node@25.9.3)(sass@1.98.0))
+        version: 6.0.1(vite@8.2.0(@types/node@26.2.0)(sass@1.98.0))
       autoprefixer:
         specifier: ^10.4.27
         version: 10.4.27(postcss@8.5.25)
@@ -98,7 +98,7 @@ importers:
         version: 6.0.3
       vite:
         specifier: ^8.0.7
-        version: 8.2.0(@types/node@25.9.3)(sass@1.98.0)
+        version: 8.2.0(@types/node@26.2.0)(sass@1.98.0)
 
 packages:
 
@@ -499,8 +499,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@25.9.3':
-    resolution: {integrity: sha512-603BddQMv3pUcr4U2dhujk83N2tTDVr/34wII2B6bJy6g+8WD6yUb11jszNs0gdi4PesVWl7ABt8nYMVpnLUcg==}
+  '@types/node@26.2.0':
+    resolution: {integrity: sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg==}
 
   '@types/prismjs@1.26.6':
     resolution: {integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==}
@@ -1362,8 +1362,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.24.6:
-    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -1835,9 +1835,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@25.9.3':
+  '@types/node@26.2.0':
     dependencies:
-      undici-types: 7.24.6
+      undici-types: 8.3.0
 
   '@types/prismjs@1.26.6': {}
 
@@ -1855,10 +1855,10 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-react@6.0.1(vite@8.2.0(@types/node@25.9.3)(sass@1.98.0))':
+  '@vitejs/plugin-react@6.0.1(vite@8.2.0(@types/node@26.2.0)(sass@1.98.0))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.7
-      vite: 8.2.0(@types/node@25.9.3)(sass@1.98.0)
+      vite: 8.2.0(@types/node@26.2.0)(sass@1.98.0)
 
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
@@ -2808,7 +2808,7 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  undici-types@7.24.6: {}
+  undici-types@8.3.0: {}
 
   unified@11.0.5:
     dependencies:
@@ -2863,7 +2863,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.2.0(@types/node@25.9.3)(sass@1.98.0):
+  vite@8.2.0(@types/node@26.2.0)(sass@1.98.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.5
@@ -2871,7 +2871,7 @@ snapshots:
       rolldown: 1.2.1
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 25.9.3
+      '@types/node': 26.2.0
       fsevents: 2.3.3
       sass: 1.98.0
 
