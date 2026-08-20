@@ -45,5 +45,10 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.3",
     "vite": "^8.0.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "js-yaml": ">=4.3.1"
+    }
   }
 }
