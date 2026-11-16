@@ -16,7 +16,7 @@ importers:
     dependencies:
       '@tabler/icons-react':
         specifier: ^3.46.0
-        version: 3.46.0(react@19.3.0)
+        version: 3.46.0(react@19.3.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -25,31 +25,31 @@ importers:
         version: 2.1.1
       framer-motion:
         specifier: ^12.38.0
-        version: 12.43.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: 12.43.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       immutable:
         specifier: 5.1.9
         version: 5.1.9
       lucide-react:
         specifier: ^1.31.0
-        version: 1.32.0(react@19.3.0)
+        version: 1.32.0(react@19.3.1)
       react:
-        specifier: ^19.3.0
-        version: 19.3.0
+        specifier: ^19.3.1
+        version: 19.3.1
       react-console-emulator:
         specifier: ^5.0.2
-        version: 5.0.2(@types/react@19.3.0)(react@19.3.0)
+        version: 5.0.2(@types/react@19.3.0)(react@19.3.1)
       react-dom:
-        specifier: ^19.3.0
-        version: 19.3.0(react@19.3.0)
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
       react-markdown:
         specifier: ^10.1.0
-        version: 10.1.0(@types/react@19.3.0)(react@19.3.0)(supports-color@7.2.0)
+        version: 10.1.0(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0)
       react-rnd:
         specifier: ^10.5.3
-        version: 10.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: 10.5.3(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react-syntax-highlighter:
         specifier: ^16.1.1
-        version: 16.1.1(react@19.3.0)
+        version: 16.1.1(react@19.3.1)
       sass:
         specifier: ^1.104.1
         version: 1.104.1
@@ -1302,10 +1302,10 @@ packages:
   react-console-emulator@5.0.2:
     resolution: {integrity: sha512-IqoL1lmvY+VS80GgXmOoSuFMVfitZY9NM5OYQ8nHBYzG3fPeqILJDwy3/sS5LIHq2Os1lrrDR5O/TF0LDcaB1Q==}
 
-  react-dom@19.3.0:
-    resolution: {integrity: sha512-JDk8dgif51OjFoDE70+OT9ICyYr+69HlmihNwp1+Nsfbna3t5sIiCa9ZJktDmQ4/1b/rn26hIAR2uYXDMr5r0Q==}
+  react-dom@19.3.1:
+    resolution: {integrity: sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==}
     peerDependencies:
-      react: ^19.3.0
+      react: ^19.3.1
 
   react-draggable@4.7.1:
     resolution: {integrity: sha512-wa3tzfFnYt3yaZLuyU58fl1TNunfWfBekDgWhZA1+gb2jnp42wZ0ymuopR6M5kqDYmm4hKmzGlcKWjZf3Zb6RQ==}
@@ -1346,8 +1346,8 @@ packages:
     peerDependencies:
       react: '>= 0.14.0'
 
-  react@19.3.0:
-    resolution: {integrity: sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==}
+  react@19.3.1:
+    resolution: {integrity: sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==}
     engines: {node: '>=0.10.0'}
 
   readdirp@5.1.1:
@@ -1849,10 +1849,10 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@tabler/icons-react@3.46.0(react@19.3.0)':
+  '@tabler/icons-react@3.46.0(react@19.3.1)':
     dependencies:
       '@tabler/icons': 3.46.0
-      react: 19.3.0
+      react: 19.3.1
 
   '@tabler/icons@3.46.0': {}
 
@@ -2211,14 +2211,14 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  framer-motion@12.43.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  framer-motion@12.43.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       motion-dom: 12.43.0
       motion-utils: 12.39.0
       tslib: 2.8.1
     optionalDependencies:
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
 
   fsevents@2.3.3:
     optional: true
@@ -2406,9 +2406,9 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@1.32.0(react@19.3.0):
+  lucide-react@1.32.0(react@19.3.1):
     dependencies:
-      react: 19.3.0
+      react: 19.3.1
 
   mdast-util-from-markdown@2.0.3(supports-color@7.2.0):
     dependencies:
@@ -2718,46 +2718,46 @@ snapshots:
     dependencies:
       hookified: 2.2.0
 
-  re-resizable@6.11.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  re-resizable@6.11.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
 
-  react-console-emulator@5.0.2(@types/react@19.3.0)(react@19.3.0):
+  react-console-emulator@5.0.2(@types/react@19.3.0)(react@19.3.1):
     dependencies:
       defaults: 1.0.4
       prop-types: 15.8.1
       react-fast-compare: 3.2.2
       react-inner-html: 1.0.1
-      react-innertext: 1.1.5(@types/react@19.3.0)(react@19.3.0)
+      react-innertext: 1.1.5(@types/react@19.3.0)(react@19.3.1)
     transitivePeerDependencies:
       - '@types/react'
       - react
 
-  react-dom@19.3.0(react@19.3.0):
+  react-dom@19.3.1(react@19.3.1):
     dependencies:
-      react: 19.3.0
+      react: 19.3.1
       scheduler: 0.28.0
 
-  react-draggable@4.7.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  react-draggable@4.7.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       clsx: 2.1.1
       prop-types: 15.8.1
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
 
   react-fast-compare@3.2.2: {}
 
   react-inner-html@1.0.1: {}
 
-  react-innertext@1.1.5(@types/react@19.3.0)(react@19.3.0):
+  react-innertext@1.1.5(@types/react@19.3.0)(react@19.3.1):
     dependencies:
       '@types/react': 19.3.0
-      react: 19.3.0
+      react: 19.3.1
 
   react-is@16.13.1: {}
 
-  react-markdown@10.1.0(@types/react@19.3.0)(react@19.3.0)(supports-color@7.2.0):
+  react-markdown@10.1.0(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0):
     dependencies:
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
@@ -2766,7 +2766,7 @@ snapshots:
       hast-util-to-jsx-runtime: 2.3.6(supports-color@7.2.0)
       html-url-attributes: 3.0.1
       mdast-util-to-hast: 13.2.1
-      react: 19.3.0
+      react: 19.3.1
       remark-parse: 11.0.0(supports-color@7.2.0)
       remark-rehype: 11.1.2
       unified: 11.0.5
@@ -2775,25 +2775,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  react-rnd@10.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  react-rnd@10.5.3(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
-      re-resizable: 6.11.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
-      react-draggable: 4.7.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      re-resizable: 6.11.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      react-draggable: 4.7.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       tslib: 2.6.2
 
-  react-syntax-highlighter@16.1.1(react@19.3.0):
+  react-syntax-highlighter@16.1.1(react@19.3.1):
     dependencies:
       '@babel/runtime': 7.29.7
       highlight.js: 10.7.3
       highlightjs-vue: 1.0.0
       lowlight: 1.20.0
       prismjs: 1.30.0
-      react: 19.3.0
+      react: 19.3.1
       refractor: 5.0.0
 
-  react@19.3.0: {}
+  react@19.3.1: {}
 
   readdirp@5.1.1: {}
 
@@ -3016,4 +3016,3 @@ snapshots:
   zod@4.4.3: {}
 
   zwitch@2.0.4: {}
-  
